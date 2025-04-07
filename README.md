@@ -27,14 +27,20 @@ Este proyecto es una solución técnica diseñada para procesar transacciones fi
 - Diccionario para el conteo de transacciones por tipo por su eficiencia en búsquedas
 
 ## Estructura del Proyecto
-Prueba_Tecnica/
-├── Models/
-│ ├── Reporte.cs # Modelo para el reporte generado
-│ ├── TipoTransaccion.cs # Enumerador para tipos de transacción
-│ └── Transaccion.cs # Modelo de transacción base
-├── Interfaces/
-│ ├── IReporteGenerador.cs # Contrato para generación de reportes
-│ └── ITransaccionLoader.cs # Contrato para carga de transacciones
+
+```markdown
+📦 Prueba_Tecnica
+├── 📂 Data                  → Datos a consumir
+│   ├── data.csv             
+├── 📂 Models  
+│   ├── Reporte.cs           → Modelo para el reporte generado  
+│   ├── TipoTransaccion.cs   → Enumerador para tipos de transacción  
+│   └── Transaccion.cs       → Modelo de transacción base  
+└── 📂 Interfaces  
+│   ├── IReporteGenerador.cs → Contrato para generación de reportes  
+│   └── ITransaccionLoader.cs → Contrato para carga de transacciones
+│── Program.cs
+```
 
 ## Documentación y Calidad del Código
 El código sigue estos principios:
@@ -46,18 +52,3 @@ El código sigue estos principios:
 - **Mantenibilidad**:
   - Fácil de extender (ej: añadir nuevos cálculos al reporte)
   - Bajo acoplamiento entre componentes
-
-**Ejemplo de documentación clave**:
-```csharp
-// En IReporteGenerador.cs
-public interface IReporteGenerador
-{
-    // Calcula el balance final sumando créditos y restando débitos
-    decimal ObtenerBalanceFinal(List<Transaccion> transacciones);
-    
-    // Encuentra la transacción con mayor monto (absoluto)
-    Transaccion ObtenerTransaccionMayor(List<Transaccion> transacciones);
-    
-    // Cuenta cuántas transacciones hay de cada tipo
-    Dictionary<TipoTransaccion, int> ObtenerConteoTransaccionesPorTipo(List<Transaccion> transacciones);
-}
