@@ -1,0 +1,15 @@
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\bin\Debug\net9.0\Prueba-Tecnica.exe
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\bin\Debug\net9.0\Prueba-Tecnica.deps.json
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\bin\Debug\net9.0\Prueba-Tecnica.runtimeconfig.json
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\bin\Debug\net9.0\Prueba-Tecnica.dll
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\bin\Debug\net9.0\Prueba-Tecnica.pdb
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\net9.0\Prueba-Tecnica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\net9.0\Prueba-Tecnica.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\net9.0\Prueba-Tecnica.AssemblyInfo.cs
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\net9.0\Prueba-Tecnica.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\net9.0\Prueba-Tecnica.dll
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\net9.0\refint\Prueba-Tecnica.dll
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\net9.0\Prueba-Tecnica.pdb
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\net9.0\Prueba-Tecnica.genruntimeconfig.cache
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\obj\Debug\net9.0\ref\Prueba-Tecnica.dll
+C:\Users\HP\source\repos\Prueba-Tecnica\Prueba-Tecnica\bin\Debug\net9.0\Data\data.csv

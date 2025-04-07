@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Prueba-Tecnica/1.0.0": {
+        "runtime": {
+          "Prueba-Tecnica.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Prueba-Tecnica/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

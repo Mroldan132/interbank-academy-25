@@ -1,66 +1,63 @@
-# Reto Técnico: Procesamiento de Transacciones Bancarias (CLI)
+# README - Proyecto Prueba Técnica
 
-## Objetivo:
+## Introducción
+Este proyecto es una solución técnica diseñada para procesar transacciones financieras y generar reportes con información relevante como el balance final, la transacción de mayor monto y el conteo de transacciones por tipo (crédito/débito).
+## Instrucciones de Ejecución
+1. **Requisitos previos**:
+   - .NET Core SDK (versión compatible con el proyecto)
+   - IDE de preferencia (Visual Studio, VS Code, etc.)
 
-Desarrolla una aplicación de línea de comandos (CLI) que procese un archivo CSV con transacciones bancarias y genere un reporte que incluya:
+2. **Instalación**:
+   - Clonar el repositorio
+   - No se requieren dependencias externas adicionales
 
-- **Balance Final:**  
-  Suma de los montos de las transacciones de tipo "Crédito" menos la suma de los montos de las transacciones de tipo "Débito".
+3. **Ejecución**:
+   - Compilar y ejecutar el proyecto desde tu IDE
 
-- **Transacción de Mayor Monto:**  
-  Identificar el ID y el monto de la transacción con el valor más alto.
+## Enfoque y Solución
+**Lógica implementada**:
+- Se utilizó una arquitectura por capas con separación clara de responsabilidades
+- Interfaces para definir contratos (IReporteGenerador, ITransaccionLoader)
+- Modelos bien definidos para representar entidades (Transaccion, Reporte)
+- Enfoque SOLID, especialmente principio de inversión de dependencias
 
-- **Conteo de Transacciones:**  
-  Número total de transacciones para cada tipo ("Crédito" y "Débito").
+**Decisiones de diseño**:
+- Uso de enum `TipoTransaccion` para garantizar consistencia en los tipos
+- Métodos específicos para cada cálculo requerido en el reporte
+- Diccionario para el conteo de transacciones por tipo por su eficiencia en búsquedas
 
----
+## Estructura del Proyecto
+Prueba_Tecnica/
+├── Models/
+│ ├── Reporte.cs # Modelo para el reporte generado
+│ ├── TipoTransaccion.cs # Enumerador para tipos de transacción
+│ └── Transaccion.cs # Modelo de transacción base
+├── Interfaces/
+│ ├── IReporteGenerador.cs # Contrato para generación de reportes
+│ └── ITransaccionLoader.cs # Contrato para carga de transacciones
 
-## Instrucciones
+## Documentación y Calidad del Código
+El código sigue estos principios:
+- **Documentación**: Interfaces y modelos bien documentados
+- **Legibilidad**: 
+  - Nombres descriptivos de clases, métodos y propiedades
+  - Espaciado consistente
+  - Métodos cortos con responsabilidad única
+- **Mantenibilidad**:
+  - Fácil de extender (ej: añadir nuevos cálculos al reporte)
+  - Bajo acoplamiento entre componentes
 
-1. **Repositorio Base:**  
-   Clona o haz un fork del repositorio base disponible en:  
-   `https://github.com/codeableorg/interbank-academy-25`
-
-2. **Entrada de Datos:**  
-   La aplicación deberá leer un archivo CSV. Ejemplo de contenido:
-
-   ```
-   id,tipo,monto
-   1,Crédito,100.00
-   2,Débito,50.00
-   3,Crédito,200.00
-   4,Débito,75.00
-   5,Crédito,150.00
-   ```
-
-3. **Salida del Programa:**  
-   La aplicación debe mostrar el reporte final en la terminal.  
-   Ejemplo de salida:
-
-   ```
-   Reporte de Transacciones
-   ---------------------------------------------
-   Balance Final: 325.00
-   Transacción de Mayor Monto: ID 3 - 200.00
-   Conteo de Transacciones: Crédito: 3 Débito: 2
-   ```
-
-4. **Lenguaje de Programación:**  
-   Utiliza el lenguaje de tu preferencia. Opciones recomendadas:
-
-   - Python
-   - Java
-   - C#
-   - JavaScript (Node.js)
-
-5. **README del Proyecto:**  
-   Incluye un archivo `README.md` con la siguiente estructura:
-
-   - **Introducción:** Breve descripción del reto y su propósito.
-   - **Instrucciones de Ejecución:** Cómo instalar dependencias y ejecutar la aplicación.
-   - **Enfoque y Solución:** Lógica implementada y decisiones de diseño.
-   - **Estructura del Proyecto:** Archivos y carpetas principales.
-
-6. **Documentación y Calidad del Código:**
-   - Código bien documentado y fácil de leer.
-   - Comentarios explicando pasos clave y lógica del programa.
+**Ejemplo de documentación clave**:
+```csharp
+// En IReporteGenerador.cs
+public interface IReporteGenerador
+{
+    // Calcula el balance final sumando créditos y restando débitos
+    decimal ObtenerBalanceFinal(List<Transaccion> transacciones);
+    
+    // Encuentra la transacción con mayor monto (absoluto)
+    Transaccion ObtenerTransaccionMayor(List<Transaccion> transacciones);
+    
+    // Cuenta cuántas transacciones hay de cada tipo
+    Dictionary<TipoTransaccion, int> ObtenerConteoTransaccionesPorTipo(List<Transaccion> transacciones);
+}
