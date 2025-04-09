@@ -1,7 +1,8 @@
-﻿using Prueba_Tecnica.Models;
+﻿using Prueba_Tecnica.Interfaces;
+using Prueba_Tecnica.Models;
 using System.Globalization;
 
-public class TransaccionCsvLoader
+public class TransaccionCsvLoader : ITransaccionLoader
 {
     private readonly string _filePath;
 
@@ -37,34 +38,21 @@ public class TransaccionCsvLoader
             }
 
             // Validar que los campos tengan el formato correcto
-            if (!int.TryParse(values[0], out int id))
-            {
-                Console.WriteLine($"Id inválido en línea: {line}");
-                continue;
-            }
-
             // Validar que el tipo de transacción sea válido
-            if (!Enum.TryParse(values[1], out TipoTransaccion tipo))
-            {
-                Console.WriteLine($"Tipo inválido en línea: {line}");
-                continue;
-            }
-
             // Validar que el monto sea un número decimal válido
-            if (!decimal.TryParse(values[2], NumberStyles.Any, CultureInfo.InvariantCulture, out decimal monto))
-            {
-                Console.WriteLine($"Monto inválido en línea: {line}");
+            if(!int.TryParse(values[0], out int id) ||
+               !Enum.TryParse(values[1], out TipoTransaccion tipo) ||
+               !decimal.TryParse(values[2], NumberStyles.Any, CultureInfo.InvariantCulture, out decimal monto)){
+                Console.WriteLine($"Línea inválida: {line}");
                 continue;
             }
 
-            var transaccion = new Transaccion
+            transacciones.Add(new Transaccion
             {
                 Id = id,
                 Tipo = tipo, 
                 Monto = monto
-            };
-
-            transacciones.Add(transaccion);
+            });
         }
 
         return transacciones;
