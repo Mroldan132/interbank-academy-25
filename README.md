@@ -39,6 +39,10 @@ Este proyecto es una solución técnica diseñada para procesar transacciones fi
 └── 📂 Interfaces  
 │   ├── IReporteGenerador.cs → Contrato para generación de reportes  
 │   └── ITransaccionLoader.cs → Contrato para carga de transacciones
+└── 📂 Servives  
+│   ├── ReporteGenerador.cs → Genera los parametros para el reporte
+│   ├── TransaccionCsvLoader.cs → Lee el csv y lo carga en el modelo respectivo  
+│   └── ReportePrinter.cs → Genera el reporte en consola
 │── Program.cs
 ```
 
